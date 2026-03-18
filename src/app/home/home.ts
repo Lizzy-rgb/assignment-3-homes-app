@@ -15,6 +15,7 @@ export class Home {
   // readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
   housingLocationList: HousingLocationInfo[] = [];
   filterString = '';
+  filteredLocationList: HousingLocationInfo[] = [];
 
   // Injecting HousingService into the Component
   housingService: HousingService = inject(HousingService);
@@ -32,5 +33,9 @@ export class Home {
     return this.housingLocationList.filter((location) =>
       location.city.toLowerCase().includes(filter)
     );
+  }
+
+  filterResults(value: string): void {
+    this.filterString = value;
   }
 }

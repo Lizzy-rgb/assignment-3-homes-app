@@ -6,10 +6,11 @@
             placeholder="Filter by city"
             aria-label="Filter by city"
             style="width: 30%"
+            #filter
             [value]="filterString"
             (input)="filterString = $any($event.target).value"
         />
-        <button type="button" class="btn btn-primary">Search</button>
+        <button type="button" class="btn btn-primary" (click)="filterResults(filter.value)">Search</button>
     </form>
 </section>
 <section class="results">
