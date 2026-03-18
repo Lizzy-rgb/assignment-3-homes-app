@@ -1,11 +1,12 @@
-<main>
-<header class="brand-name">
-<img class="brand-logo"
-src="house-logo.png"
-alt="logo"
-aria-hidden="true" />
-</header>
-<section class="content">
-<app-home />
-</section>
-</main>
+<div class="container">
+    <a [routerLink]="['/']">
+        <main>
+            <header class="brand-name">
+            <img class="brand-logo" src="house-logo.png" alt="logo" aria-hidden="true" />
+            </header>
+        </main>
+    </a>
+    <section class="content">
+        <router-outlet></router-outlet>
+    </section>
+</div>

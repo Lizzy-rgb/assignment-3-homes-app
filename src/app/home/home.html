@@ -6,14 +6,15 @@
             placeholder="Filter by city"
             aria-label="Filter by city"
             style="width: 30%"
+            [value]="filterString"
+            (input)="filterString = $any($event.target).value"
         />
         <button type="button" class="btn btn-primary">Search</button>
     </form>
 </section>
 <section class="results">
-    @for (housingLocation of housingLocationList; track housingLocation){
     <app-housing-location
+        *ngFor="let housingLocation of filteredHousingLocationList"
         [housingLocation]="housingLocation"
     ></app-housing-location>
-    }
 </section>
